@@ -46,12 +46,12 @@ export default {
 }
 .card-body {
   background: url("./assets/horizon.jpg");
-  height: 90vh;
+  height: 93vh;
   background-size: 1920px 1280px;
   background-repeat: repeat-y;
 }
 .surfboard-image {
-  height: 40px;
+  height: 2rem;
   transform: rotate(90deg);
 }
 .navbar-nav.navbar-center {

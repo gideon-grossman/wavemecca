@@ -1,12 +1,13 @@
 <template>
   <div class="search-page">
+    <div class="instructions my-2">Enter the name of a surf spot to find recent photographs and conditions</div>
     <input
       v-model="hashtag"
       class="searchbar"
-      placeholder="Enter surf spot name"
+      placeholder="Surf spot name"
     />
     <div class="row my-3 justify-content-center">
-      <button class="btn btn-info search-button" @click.prevent="search()">
+      <button class="btn btn-info search-button" :disabled="hashtag.length==0" @click.prevent="search()">
         Search
       </button>
     </div>
@@ -38,7 +39,7 @@ export default {
     return {
       contentLoaded: true,
       hashtaggedPosts: {},
-      hashtag: null,
+      hashtag: "",
     };
   },
   props: {
@@ -137,9 +138,14 @@ a {
   border-radius: 0.25rem;
   outline: none;
   box-shadow: none;
+  text-align: center;
 }
 .search-page {
   height: 100%;
   overflow-y: scroll;
+  overflow-x: hidden;
+}
+.instructions {
+  font-weight: bold;
 }
 </style>
