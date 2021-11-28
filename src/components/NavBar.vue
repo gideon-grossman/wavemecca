@@ -51,7 +51,7 @@ export default {
   color: white;
 }
 .about-button {
-  margin-left: 90%;
+  margin-left: 85%;
   height: 70%;
   position: absolute;
   vertical-align: middle;

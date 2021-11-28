@@ -11,17 +11,15 @@
           :src="getImageSrc(edge.imageBase64)"
           :alt="getImageSrc(edge.imageBase64)"
         />
+        <p>
+          <b>{{formatDate(edge.node.taken_at_timestamp)}}</b>
+        </p>
         <div
           v-for="textedge in edge.node.edge_media_to_caption.edges"
           :key="textedge.node.text"
         >
-          <p>{{ textedge.node.text }}</p>
+          <div class="captions"><p>{{ textedge.node.text }}</p></div>
         </div>
-        <!-- <p>{{ edge.node.taken_at_timestamp }}</p> -->
-        <!-- <p>{{ getDateTime(edge.node.taken_at_timestamp) }}</p> -->
-        <p>
-          <b>{{ new Date(edge.node.taken_at_timestamp * 1000) }}</b>
-        </p>
       </div>
     </div>
   </div>
@@ -46,6 +44,13 @@ export default {
       }
       return false;
     },
+    formatDate(milliseconds) {
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      const dateTime = new Date(milliseconds * 1000);
+      const time = dateTime.toLocaleTimeString(undefined, options);
+      return time;
+
+    },
     getImageSrc(base64Image) {
       return "data:image/png;base64 " + base64Image;
     },
@@ -58,4 +63,9 @@ export default {
 </script>
 
 <style scoped>
+.captions {
+  margin: auto;
+  width: 50%;
+  padding: 10px 0px;
+}
 </style>
