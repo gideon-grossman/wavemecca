@@ -1,38 +1,32 @@
 <template>
   <div id="app">
-    <nav class="navbar navbar-nav navbar-center">
-      <div class="d-flex align-items-center justify-content-center">
-        <img
-          class="surfboard-image mx-3"
-          alt="surfboard"
-          src="@/assets/surfboard.png"
-        />
-        <div class="align-bottom">WAVE MECCA</div>
-        <div>
-          <img
-            class="surfboard-image mx-3"
-            alt="surfboard"
-            src="@/assets/surfboard.png"
-          />
-        </div>
-      </div>
-    </nav>
+    <NavBar @show-about="showAbout=true"/>
     <div class="card">
       <div class="card-body">
         <Search />
       </div>
+      <About class="about-section" @close-about="showAbout=false" v-show="showAbout"/>
     </div>
   </div>
 </template>
 
 <script>
 import Search from "./components/Search.vue";
+import NavBar from "./components/NavBar.vue";
+import About from "./components/About.vue";
 
 export default {
   name: "App",
   components: {
     Search,
+    NavBar,
+    About
   },
+  data() {
+    return {
+      showAbout: false
+    }
+  }
 };
 </script>
 
@@ -50,15 +44,15 @@ export default {
   background-size: 1920px 1280px;
   background-repeat: repeat-y;
 }
-.surfboard-image {
-  height: 2rem;
-  transform: rotate(90deg);
+.card {
+  position: relative;
 }
-.navbar-nav.navbar-center {
-    position: relative;
-    left: 50%;
-    transform: translatex(-50%);
-    background: black;
-    color: white;
+.about-section {
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  background-color: white;
+  box-shadow: #2c3e50;
+  border-radius: 5px;
 }
 </style>

@@ -7,7 +7,7 @@
       placeholder="Surf spot name"
     />
     <div class="row my-3 justify-content-center">
-      <button class="btn btn-info search-button" :disabled="hashtag.length==0" @click.prevent="search()">
+      <button class="btn btn-info wm-button" :disabled="hashtag.length==0" @click.prevent="search()">
         Search
       </button>
     </div>
@@ -128,11 +128,6 @@ li {
 a {
   color: #42b983;
 }
-.search-button {
-  width: 5rem;
-  background: black;
-  color: white;
-}
 .searchbar {
   width: 13rem;
   border-radius: 0.25rem;
@@ -142,7 +137,7 @@ a {
 }
 .search-page {
   height: 100%;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
 }
 .instructions {
