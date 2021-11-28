@@ -5,7 +5,7 @@
       <div class="card-body">
         <Search />
       </div>
-      <About class="about-section" @close-about="showAbout=false" v-show="showAbout"/>
+      <About @close-about="showAbout=false" v-show="showAbout"/>
     </div>
   </div>
 </template>
@@ -46,13 +46,5 @@ export default {
 }
 .card {
   position: relative;
-}
-.about-section {
-  position: absolute;
-  top: 3%;
-  right: 3%;
-  background-color: white;
-  box-shadow: #2c3e50;
-  border-radius: 5px;
 }
 </style>
