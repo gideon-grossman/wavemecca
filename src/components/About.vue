@@ -22,6 +22,9 @@
     fetch images directly from Instagram's API and display them in an image tag.
     Accordingly, the backend of this app must first fetch the images, convert
     the images to base64 format and then pass the output to the client.
+    The Instagram API also implements very strict rate limiting, so occasionally there will be no response.
+    The next update to this site will inform you if this is the case and perhaps use an 
+    alternative endpoint in the IG API to circumvent throttling.
   </div>
 </template>
 
