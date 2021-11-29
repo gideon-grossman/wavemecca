@@ -61,8 +61,8 @@ export default {
       console.log("getting hashtagged posts");
       // let hashtag = "hookipa";
       axios
-        // .get("http://localhost:8080/api/content/hashtag/" + this.hashtag)
-        .get("https://wave-mecca-backend.herokuapp.com/api/content/hashtag/" + this.hashtag)
+        .get("http://localhost:8080/api/content/hashtag/" + this.hashtag)
+        // .get("https://wave-mecca-backend.herokuapp.com/api/content/hashtag/" + this.hashtag)
         .then((response) => {
           console.log(
             "response: " + JSON.stringify(response.data.hashtaggedPosts)
